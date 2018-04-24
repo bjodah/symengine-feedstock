@@ -5,9 +5,9 @@ cd build
 
 export CXX=clang++
 export CC=clang-6.0
-export CXXFLAGS=-stdlib=libc++
 
 cmake \
+    -DCMAKE_CXX_FLAGS_RELEASE="-O2 -stdlib=libc++" \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBUILD_BENCHMARKS=no \
@@ -18,6 +18,7 @@ cmake \
     -DBUILD_SHARED_LIBS=yes \
     -DWITH_LLVM=yes \
     -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_SHARED_LINKER_FLAGS="-lc++" \
     ..
 
 cmake --build .
