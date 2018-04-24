@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sed -i.bak 's/c++11/c++17/' CMakeLists.txt
+
 mkdir build
 cd build
 
@@ -22,7 +24,7 @@ cmake \
     -DBUILD_SHARED_LIBS=yes \
     -DWITH_LLVM=yes \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_SHARED_LINKER_FLAGS="-lc++ -lc++abi" \
+    -DCMAKE_CXX_STANDARD_LIBRARIES="-lc++ -lc++abi" \
     ..
 
 make VERBOSE=1
