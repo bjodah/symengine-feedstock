@@ -3,6 +3,10 @@
 mkdir build
 cd build
 
+export CXX=clang++
+export CC=clang-6.0
+export CXXFLAGS=-stdlib=libc++
+
 cmake \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \

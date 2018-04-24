@@ -1,5 +1,5 @@
-{% set commit = "3b0f72126b1b0ce1e2e41a96968fc911648b06be" %}
-{% set version = "0.3.0.389.g3b0f721" %}
+{% set commit = "75dd6e58bab20569258f640ba55324daf261bcc1" %}
+{% set version = "0.3.0.417.g75dd6e5" %}
 
 package:
   name: symengine
@@ -26,6 +26,8 @@ requirements:
     - vc 14            # [win]
     - llvmdev 3.9.*    # [not win32]
     - libflint 2.5.*   # [unix]
+    - clangdev >=6.0   # [linux]
+    - libcxx >=6.0     # [linux]
   run:
     - gmp >=6.1,<7     # [unix]
     - mpir 3.*         # [win]
@@ -33,6 +35,7 @@ requirements:
     - mpc 1.*
     - vc 14            # [win]
     - libflint 2.5.*   # [unix]
+    - libcxx >=6.0     # [linux]
 
 test:
   commands:
