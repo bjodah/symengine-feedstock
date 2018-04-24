@@ -24,7 +24,6 @@ requirements:
     - mpfr 3.*
     - mpc 1.*
     - vc 14            # [win]
-    - libflint 2.5.*   # [unix]
     - clangdev >=6.0   # [linux]
     - libcxx >=6.0     # [linux]
   run:
@@ -33,7 +32,6 @@ requirements:
     - mpfr 3.*
     - mpc 1.*
     - vc 14            # [win]
-    - libflint 2.5.*   # [unix]
     - libcxx >=6.0     # [linux]
 
 test:
