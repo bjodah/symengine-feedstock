@@ -23,9 +23,9 @@ cmake \
     -DWITH_MPC=yes \
     -DBUILD_SHARED_LIBS=yes \
     -DWITH_LLVM=yes \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_CXX_STANDARD_LIBRARIES="-lc++ -lc++abi" \
     ..
+#    -DCMAKE_INSTALL_LIBDIR=lib \
 
 make VERBOSE=1
 make install

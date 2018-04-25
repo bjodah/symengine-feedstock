@@ -1,5 +1,5 @@
-{% set commit = "d95de2c8a3050ccf7c1a364fb27ea92b917b7a45" %}
-{% set version = "0.3.0.419.gd95de2c" %}
+{% set commit = "15aeb289f4e9806ad3b4affc814b249150b21475" %}
+{% set version = "0.3.0.419.g15aeb28" %}
 
 package:
   name: symengine
@@ -17,7 +17,6 @@ build:
 
 requirements:
   build:
-    - toolchain        # [unix]
     - cmake
     - gmp 6.1.*        # [unix]
     - mpir 3.*         # [win]
@@ -42,6 +41,8 @@ test:
     - test -f $PREFIX/include/symengine/basic.h                 # [unix]
     - test -f $PREFIX/lib/libsymengine.so                       # [linux]
     - test -f $PREFIX/lib/libsymengine.dylib                    # [osx]
+    - conda inspect linkages -p ${PREFIX} symengine  # [not win]
+    - conda inspect objects -p ${PREFIX} symengine  # [osx]
 
 about:
   home: https://github.com/symengine/symengine
