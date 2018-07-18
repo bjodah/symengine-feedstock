@@ -21,7 +21,7 @@ cmake \
     -DCMAKE_INSTALL_LIBDIR=lib \
     ..
 
-cmake --build .
+make VERBOSE=1
 cmake --build . --target install
 
 ctest
